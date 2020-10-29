@@ -1,9 +1,13 @@
 class QuestionsController < ApplicationController
+  
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  
   def index
     @questions = Question.all
   end
 
   def show
+    @answer = Answer.new
   end
 
   def new
@@ -20,11 +24,9 @@ class QuestionsController < ApplicationController
   end
   
   def edit
-    @question = Question.find(params[:id])
   end
   
   def update
-    @question = Question.find(params[:id])
     if @question.update(question_params)
       redirect_to root_path, notice: 'Success!'
     else
@@ -33,7 +35,16 @@ class QuestionsController < ApplicationController
     end
   end
   
+  def destroy
+    @question.destroy
+    redirect_to root_path, notice: 'Success!'
+  end
+  
   private
+    def set_question
+      @question = Question.find(params[:id])
+    end
+    
     def question_params
       #byebug
       params.require(:question).permit(:name, :title, :context)
