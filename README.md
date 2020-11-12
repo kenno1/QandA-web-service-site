@@ -1,11 +1,8 @@
 # README
 
 = app info =
-
-*app name
-dash-scraping-web-app
-*Heroku URL
-https://qanda-web-service.herokuapp.com/
+◇app name : dash-scraping-web-app
+◇Heroku URL : https://qanda-web-service.herokuapp.com/
 
 = command list =
 ◇check status
