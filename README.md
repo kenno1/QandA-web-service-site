@@ -9,17 +9,22 @@
 = command list =
 
 ◇check status
+
 heroku ps
 
 ◇update code on heroku
+
 git push heroku master
 
 ◇postgreSQL login
+
 heroku pg:psql
 
 ◇open on browser
+
 heroku open
 
 ◇delete app
+
 heroku apps:destroy --app {application name}
 
